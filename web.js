@@ -9,6 +9,8 @@ app.get('/', function(request, response)
   response.send(fs.readFileSync("index.html").toString());
 });
 
+app.use(express.static("resources"));
+
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
   console.log("Listening on " + port);
